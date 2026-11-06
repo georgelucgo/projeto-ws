@@ -1,10 +1,25 @@
 
-export interface Pedido {
+export type Pedido = {
   id: number;
   produtoId: number;
   quantidade: number;
-  clienteEmail: string;
+  precoUnitario: number;
   total: number;
-  status: string;
-  notificacaoStatus: string;
-}
+  clienteEmail: string;
+  status: "confirmado";
+  notificacaoStatus: "nao_enviada";
+  criadoEm: string;
+};
+
+export type ReservaEstoque = {
+  produtoId: number;
+  reservado: number;
+  precoUnitario: number;
+  estoqueRestante: number;
+};
+
+export type CriarPedidoInput = {
+  produtoId: number;
+  quantidade: number;
+  clienteEmail: string;
+};

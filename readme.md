@@ -45,10 +45,16 @@ Os três serviços devem ser iniciados em terminais separados.
 
 ### Pedidos - Porta 3000
 
-- GET /health
-- POST /pedidos (Encontro 2)
-- GET /pedidos (Encontro 2)
-- GET /pedidos/:id (Encontro 2)
+- POST /pedidos - Cria pedido após confirmar reserva
+- GET /pedidos - Lista pedidos
+- GET /pedidos/:id - Consulta pedido por ID
+
+Variáveis de ambiente:
+- PORT=3000
+- CATALOG_URL=http://localhost:3001
+
+A comunicação com Catálogo é feita via HTTP.
+Pedidos retorna 400, 404, 409 ou 502 conforme a falha.
 
 ### Notificações - Porta 3002
 

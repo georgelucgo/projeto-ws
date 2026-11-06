@@ -101,10 +101,11 @@ app.post("/produtos/:id/reservas", (req, res) => {
   produto.estoque -= quantidade;
 
   return res.status(200).json({
-    reservado: quantidade,
-    estoqueRestante: produto.estoque,
-    precoUnitario: produto.preco
-  });
+  produtoId: produto.id,
+  reservado: quantidade,
+  precoUnitario: produto.preco,
+  estoqueRestante: produto.estoque
+});
 });
 
 app.listen(PORT, () => {
